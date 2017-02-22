@@ -100,7 +100,11 @@ $ ssh -i <b><i>PRIVATE_KEY.PEM</i></b> ec2-user@<b><i>EC2_PUBLIC_DNS_NAME</i></b
 3\. Navigate to the lab-2-build/mxnet/ folder to use as your working directory.  
 `$ cd ecs-deep-learning-workshop/lab-2-build/mxnet`
 
-4\. Build the Docker image using the provided Dockerfile.  A build argument is used to set the password for the Jupyter notebook login which is used in a later lab.  <b>Also, note the trailing period in the command below!!</b>
+4\. Start Docker daemon 
+
+`$ sudo service docker start`
+
+5\. Build the Docker image using the provided Dockerfile.  A build argument is used to set the password for the Jupyter notebook login which is used in a later lab.  <b>Also, note the trailing period in the command below!!</b>
 
 <pre>
 $ docker build --build-arg PASSWORD=<b><i>INSERT_A_PASSWORD</i></b> -t mxnet .
